@@ -1,6 +1,23 @@
 <template>
   <div id="app">
-    <h1>Hello world</h1>
+    <div class="app-border">
+      <div class="center-box"></div>
+      <div class="main">
+        <div class="text-box">
+          <span class="copy">M</span>
+        </div>
+        <div class="text-box">
+          <span class="copy">A</span>
+        </div>
+        <div class="text-box">
+          <span class="copy">Q</span>
+        </div>
+        <div class="text-box">
+          <span class="copy">E</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
