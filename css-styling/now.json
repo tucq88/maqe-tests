@@ -1,0 +1,17 @@
+{
+    "name": "css-styling",
+    "type": "static",
+    "static": {
+        "public": "dist",
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    },
+    "alias": "maqe-css-styling",
+    "files": [
+        "dist"
+    ]
+}
