@@ -1,6 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+// Variables
+$grey: #F0F0F0;
+$grey-light: #DFDFDF;
+$grey-darker: #EAEAEA;
+$border: #E5E5E5;
+$red: #B04746;
+$light: #fff;
+$breakpoint: 768px;
+
+// Config
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+h1 {
+  margin-bottom: 1.25rem;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+h3 {
+  margin-bottom: .5rem;
+}
+h4 {
+  margin-bottom: .5rem;
+}
+p {
+  margin-bottom: .5rem;
 }
 
 html {
@@ -8,4 +33,140 @@ html {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
+}
+
+.icon-text {
+  > svg {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.paginator {
+  margin: 3rem 0;
+  display: block;
+  text-align: center;
+  * {
+    cursor: pointer;
+  }
+}
+
+.paginator__prev,
+.paginator__next {
+  display: inline;
+  margin: 0 .5rem;
+  padding: 0 .5rem;
+  border-radius: .3rem;
+
+  &:hover {
+    background: $red;
+    color: $light;
+  }
+}
+
+.pager {
+  padding: 0;
+  display: inline;
+  list-style: none;
+  > li {
+    display: inline;
+  }
+  > li > a {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    text-align: center;
+  }
+
+  > li.active > a,
+  > li > a:hover {
+    background: $red;
+    color: $light;
+  }
+}
+
+.post {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid $border;
+  border-radius: .3rem;
+  box-shadow: 0 1px .5rem $grey-darker;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $breakpoint) {
+    flex-direction: column;
+  }
+
+  &.is-odd {
+    background: $grey;
+  }
+
+  &__avatar {
+     flex: .5;
+  }
+
+  &__avatar > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    @media screen and (max-width: $breakpoint) {
+      margin: 0 auto 1rem;
+    }
+  }
+
+  &__detail {
+    padding: 0 1rem;
+    flex: 2;
+    @media screen and (max-width: $breakpoint) {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: .5rem;
+  }
+
+  &__timeago {
+    color: #B4B3B3;
+    font-style: italic;
+  }
+
+  &__author {
+     flex: .5;
+     text-align: center;
+     border-left: 1px solid $border;
+
+     @media screen and (max-width: $breakpoint) {
+       border-left: none;
+       border-top: 1px solid $border;
+       padding-top: 1rem;
+     }
+
+     > img {
+       border-radius: 50%;
+       width: 7rem;
+     }
+  }
+
+  .author {
+    &__name {
+      margin-bottom: .5rem;
+      color: $red;
+    }
+
+    &__role {
+      font-weight: 400;
+      margin-bottom: .5rem;
+    }
+
+    &__place {
+      margin-bottom: .25rem;
+    }
+  }
 }
