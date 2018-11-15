@@ -15,7 +15,6 @@ export class PostService {
     return (postsJson as any).default.map(postJson => {
       const post = new Post().deserialize(postJson);
       post.author = authors.find(author => author.id === postJson.author_id);
-      console.log(post);
       return post;
     });
   }
