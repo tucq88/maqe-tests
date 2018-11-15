@@ -1,0 +1,10 @@
+<div class="posts-list">
+  <app-post *ngFor="let post of posts; let index=index; let odd=odd; let even=even" [post]="post" [type]="{ odd: odd, even: even }"></app-post>
+  <div class="paginator">
+    <a class="paginator__prev">Previous</a>
+    <ul class="pager">
+      <li *ngFor="let i of [1,2,3,4,5,6,7,8]" [ngClass]="{'active': i === 1}"><a>{{ i }}</a></li>
+    </ul>
+    <a class="paginator__next">Next</a>
+  </div>
+</div>
