@@ -63,7 +63,6 @@ class BotMover {
             return;
         }
 
-
         if ($behavior === 'left' && $this->direction === 'West'
         || $behavior === 'right' && $this->direction === 'East')
         {
@@ -95,6 +94,19 @@ class BotMover {
 
     public function forward(int $number) {
         $this->_changeAxis('forward', $number);
+    }
+
+    public function move(array $path): void {
+        foreach($path as $behavior) {
+            if ($behavior === 'R') {
+                $this->right();
+            } elseif ($behavior === 'L') {
+                $this->left();
+            } else {
+                $steps = substr($behavior, 1);
+                $this->forward($steps);
+            }
+        }
     }
 
 }
